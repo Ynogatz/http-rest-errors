@@ -6,6 +6,8 @@ describe('Deverá realizar testes das classes de erro', () => {
 		const status: number = 401
 		const error: GenericError = new GenericError(message, status)
 
+		console.log(error)
+
 		expect(error.name).toBe('GenericError')
 		expect(error.status).toBe(status)
 		expect(error.message).toBe(message)
@@ -38,7 +40,11 @@ describe('Deverá realizar testes das classes de erro', () => {
 
 	test('deverá criar um erro BadRequest setando uma mensagem personalizada e passando um objeto vazio no parâmetro erro', () => {
 		const message: string = 'mensagem de teste erro'
-		const error: BadRequestError = new BadRequestError(message, {})
+		const error: BadRequestError = new BadRequestError(message, {
+			anyError: true
+		})
+
+		console.log(error)
 
 		expect(error.name).toBe('BadRequestError')
 		expect(error.status).toBe(400)

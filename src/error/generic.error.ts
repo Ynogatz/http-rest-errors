@@ -1,8 +1,6 @@
 import { NextFunction, Request, Response } from 'express'
 
 export class GenericError extends Error {
-
-	public teste: string = 'heuheu'
 	public readonly status: number
 	public readonly error: any
 	public name: string = 'GenericError'
@@ -10,7 +8,7 @@ export class GenericError extends Error {
 	constructor (message: string, status: number, error?: any) {
 		super(message)
 		this.status = status
-
+		this.message = message
 		this.error = error ? error : null
 	}
 }
