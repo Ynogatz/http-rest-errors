@@ -1,4 +1,4 @@
-import { NextFunction, Request, Response } from 'express'
+import { NextFunction, Request, Response } from 'express-serve-static-core'
 
 export class GenericError extends Error {
 	public readonly status: number
